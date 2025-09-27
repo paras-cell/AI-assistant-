@@ -1,0 +1,126 @@
+/* VoiceAssistant.css */
+.assistant-container {
+  flex: 1;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: transparent;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.assistant-container h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.prompt-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.user-bubble {
+  background-color: transparent;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid white;
+  max-width: 70%;
+  align-self: flex-start;
+  word-wrap: break-word;
+}
+
+.status-bar {
+  font-size: 0.95rem;
+  color: #666;
+  height: 20px;
+  position: relative;
+  top: -528px;
+  display: flex;
+  z-index: -100;
+  right: -20px;
+}
+
+.status-bar span img {
+  border-radius: 100%;
+  width: 805px;
+  height: 629px;
+  position: relative;
+  animation: zoomOut 1.5s ease-out forwards;
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.controls select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  color: #555454;
+  background-color: transparent;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controls button:hover:not(:disabled) {
+  box-shadow: 3px 3px 5px #0097A7;
+  color: white;
+}
+
+.controls button img {
+  height: 44px;
+  width: 55px;
+}
+
+.controls button:nth-child(4) {
+  padding: 0;
+  border-radius: 34px;
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: 0 0 10px #2600ff, 0 0 20px #00ffcc, 0 0 30px #2600ff;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.controls button:nth-child(4):hover {
+  box-shadow: 0 0 20px #2600ff, 0 0 30px #2600ff, 0 0 40px #2600ff;
+}
+
+.controls button:nth-child(3) {
+  height: 46px;
+  padding: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease-in-out;
+  color: white;
+  font-size: 39px;
+  width: 45px;
+}
+
+.controls button:nth-child(3):hover {
+  box-shadow: 0 0 20px #ff0000, 0 0 30px #ffff00, 0 0 40px #ff0000;
+}

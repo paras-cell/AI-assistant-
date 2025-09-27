@@ -1,0 +1,89 @@
+/* Sidebar.css */
+.sidebar {
+  width: 255px;
+  background-color: transparent;
+  color: #fff;
+  padding: 46px 20px 0px 20px;
+  overflow-y: auto;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  backdrop-filter: blur(8px);
+  scrollbar-width: none;
+}
+
+.sidebar h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #f5f5f5;
+}
+
+.clear-btn {
+  box-shadow: 0 0 10px #2600ff, 0 0 20px #00ffcc, 0 0 30px #2600ff;
+  transition: box-shadow 0.3s ease-in-out;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  background-color: transparent;
+}
+
+.clear-btn:hover {
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ffe100, 0 0 30px #ff0000;
+}
+
+.date-group h4 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #a0a0b5;
+}
+
+.history-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.history-item {
+  cursor: pointer;
+  flex: 1;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 0.2s;
+  font-size: 0.9rem;
+  border: 1px solid white;
+}
+
+.history-item:hover {
+  background-color: white;
+  color: black;
+
+}
+
+.delete-btn {
+  margin-left: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  height: 30px;
+  color: white;
+}
+
+.delete-btn:hover {
+  color: #ff7875;
+}
+
+p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}

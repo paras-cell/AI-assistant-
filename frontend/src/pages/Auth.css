@@ -1,0 +1,120 @@
+/* auth.css */
+
+.auth-page {
+  --glow-color: rgb(150, 144, 255);
+  --glow-spread-color: rgba(123, 141, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 207, 255);
+  --btn-color: rgb(63, 62, 152);
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: transparent;
+  border-radius: 12px;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+  font-family: "Segoe UI", sans-serif;
+  backdrop-filter: blur(10px);
+  border: 1px solid white;
+}
+
+.backlog {
+  background-image: url('backlog.gif');
+  background-size: cover;
+  background-position: center;
+  min-height: 97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-page h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #333;
+}
+
+.auth-page form {
+  display: flex;
+  flex-direction: column;
+  min-width: 310px;
+  min-height: 188px;
+
+}
+
+.auth-page input {
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.auth-page input:focus {
+  border-color: #0078d4;
+  outline: none;
+}
+
+.auth-page .error {
+  color: #d8000c;
+  background-color: #ffbaba;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: -8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.auth-page p {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.auth-page .register-link {
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-page .register-link:hover {
+  text-decoration: underline;
+}
+
+/* CSS */
+.button-40 {
+  --glow-color: rgb(150, 144, 255);
+  --glow-spread-color: rgba(123, 141, 255, 0.781);
+  --enhanced-glow-color: rgb(206, 207, 255);
+  --btn-color: rgb(63, 62, 152);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bolder;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.button-40:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+}
+
+.button-40:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 .5em .25em var(--glow-color);
+}

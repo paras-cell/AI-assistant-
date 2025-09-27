@@ -1,0 +1,29 @@
+.splash-screen {
+  color: white;
+  text-align: center;
+  animation: fadeOut 3s ease-in forwards;
+  background-image: url('opening.gif');
+  background-size: cover;
+  background-position: center;
+  min-height: 97vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  height: 80px;
+}
+
+.back{
+  position: absolute;
+    top: 43%;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}

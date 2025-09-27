@@ -1,0 +1,48 @@
+/* HistoryPage.css */
+.history-container {
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f8;
+  min-height: 100vh;
+}
+
+.chat-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.user-msg {
+  background-color: #4a90e2;
+  color: white;
+  align-self: flex-start;
+}
+
+.ai-msg {
+  background-color: #e0e0e0;
+  color: #333;
+  align-self: flex-end;
+}
+
+.empty-msg {
+  color: #888;
+  font-style: italic;
+}
