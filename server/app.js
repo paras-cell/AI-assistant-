@@ -5,6 +5,9 @@ import mongoose from "mongoose";
 import http from "http";
 import { Server } from "socket.io";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+
 
 import messageRoutes from "./routes/message.js";
 import historyRoutes from "./routes/history.js";
@@ -20,6 +23,17 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const distPath = path.join(__dirname, "frontend", "dist");
+
+app.use(express.static(distPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
+
 
 // ✅ Attach io to every request
 app.use((req, res, next) => {
