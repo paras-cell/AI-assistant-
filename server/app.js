@@ -13,12 +13,21 @@ import authRoutes from "./routes/auth.js";
 dotenv.config();
 
 const app = express();
-const server = http.createServer(app); // ✅ create HTTP server
+const server = http.createServer(app);
+
+// ✅ Define allowed origins
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ai-assistant-2-ssi8.onrender.com"
+];
+
+// ✅ Socket.io CORS
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // ✅ frontend origin
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
-  },
+    credentials: true
+  }
 });
 
 // ✅ Attach io to every request
@@ -27,7 +36,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors());
+// ✅ Express CORS
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(compression({ threshold: 0 }));
 
