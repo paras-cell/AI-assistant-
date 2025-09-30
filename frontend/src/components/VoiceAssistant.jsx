@@ -21,6 +21,8 @@ const VoiceAssistant = () => {
   const recognitionRef = useRef(null);
   const controllerRef = useRef(null);
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
     const loadVoices = () => {
       const availableVoices = window.speechSynthesis.getVoices();
@@ -151,7 +153,7 @@ const VoiceAssistant = () => {
       : prompt + " Keep it concise, max 50 words.";
 
     try {
-      const res = await fetch("http://localhost:5000/api/message", {
+      const res = await fetch(`${baseURL}/api/message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: modifiedPrompt, model: selectedModel }),
@@ -190,7 +192,7 @@ const VoiceAssistant = () => {
     if (!token) return;
 
     try {
-      await fetch("http://localhost:5000/api/history", {
+      await fetch(`${baseURL}/api/history`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import "./styles/Sidebar.css";
 
-const socket = io("http://localhost:5000");
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+const socket = io(`${baseURL}`);
 
 const Sidebar = ({ selectChat }) => {
   const [localHistory, setLocalHistory] = useState({});
@@ -12,7 +13,7 @@ const Sidebar = ({ selectChat }) => {
   const loadHistory = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/history", {
+      const res = await fetch(`${baseURL}/api/history`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -57,7 +58,7 @@ const Sidebar = ({ selectChat }) => {
   const deleteChat = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`http://localhost:5000/api/history/${id}`, {
+      await fetch(`${baseURL}/api/history/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -71,7 +72,7 @@ const Sidebar = ({ selectChat }) => {
     if (!window.confirm("Delete all chats?")) return;
     try {
       const token = localStorage.getItem("token");
-      await fetch("http://localhost:5000/api/history", {
+      await fetch(`${baseURL}/api/history`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

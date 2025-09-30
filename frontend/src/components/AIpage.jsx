@@ -10,13 +10,15 @@ const AIpage = () => {
   const navigate = useNavigate();
   const { user, token, login, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 
   useEffect(() => {
     const fetchUser = async () => {
       if (!token || user) return;
 
       try {
-        const res = await fetch("http://localhost:5000/api/auth/me", {
+        const res = await fetch(`${baseURL}/api/auth/me`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
