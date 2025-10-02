@@ -19,7 +19,7 @@
 }
 
 .backlog {
-  background-image: url('backlog.gif');
+  background-image: url('/backlog.gif');
   background-size: cover;
   background-position: center;
   min-height: 97vh;

@@ -2,7 +2,7 @@
   color: white;
   text-align: center;
   animation: fadeOut 3s ease-in forwards;
-  background-image: url('opening.gif');
+  background-image: url('/opening.gif');
   background-size: cover;
   background-position: center;
   min-height: 97vh;
