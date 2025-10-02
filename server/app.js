@@ -17,7 +17,14 @@ const server = http.createServer(app); // ✅ create HTTP server
 
 const io = new Server(server, {
   cors: {
+<<<<<<< HEAD
     origin: "http://localhost:5173"||"https://ai-assistant-2-ssi8.onrender.com", // ✅ frontend origin
+=======
+    origin: [
+      "http://localhost:5173",
+      "https://ai-assistant-2-ssi8.onrender.com",
+    ], // ✅ frontend origin
+>>>>>>> 2338c8c (add splash)
     methods: ["GET", "POST"],
   },
 });
