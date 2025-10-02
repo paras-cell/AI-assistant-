@@ -10,8 +10,10 @@ const AIpage = () => {
   const navigate = useNavigate();
   const { user, token, login, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
-
+const baseURL =
+  window.location.hostname === "localhost"
+    ? import.meta.env.VITE_API_BASE_URL
+    : "https://ai-assistant-pyhc.onrender.com";
 
   useEffect(() => {
     const fetchUser = async () => {

@@ -3,8 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import "./styles/Sidebar.css";
 
-const baseURL = import.meta.env.VITE_API_BASE_URL;
-const socket = io(`${baseURL}`);
+const baseURL =
+  window.location.hostname === "localhost"
+    ? import.meta.env.VITE_API_BASE_URL
+    : "https://ai-assistant-pyhc.onrender.com";
+    
+    const socket = io(`${baseURL}`);
 
 const Sidebar = ({ selectChat }) => {
   const [localHistory, setLocalHistory] = useState({});

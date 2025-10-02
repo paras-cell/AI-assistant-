@@ -11,8 +11,11 @@ const Register = () => {
   const navigate = useNavigate();
   const { login } = useAuth(); // ✅ use login from context
 
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
-
+const baseURL =
+  window.location.hostname === "localhost"
+    ? import.meta.env.VITE_API_BASE_URL
+    : "https://ai-assistant-pyhc.onrender.com";
+    
   const handleRegister = async (e) => {
     e.preventDefault();
     setError("");

@@ -15,8 +15,10 @@ const Login = () => {
     e.preventDefault();
     setError("");
 
-    const baseURL = import.meta.env.VITE_API_BASE_URL;
-
+const baseURL =
+  window.location.hostname === "localhost"
+    ? import.meta.env.VITE_API_BASE_URL
+    : "https://ai-assistant-pyhc.onrender.com";
 
     try {
       const res = await fetch(`${baseURL}/api/auth/login`, {
