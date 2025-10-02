@@ -24,8 +24,8 @@ const VoiceAssistant = () => {
 const baseURL =
   window.location.hostname === "localhost"
     ? import.meta.env.VITE_API_BASE_URL
-    : "https://ai-assistant-pyhc.onrender.com";
-    
+    : "https://ai-assistant-backend-xz01.onrender.com";
+
   useEffect(() => {
     const loadVoices = () => {
       const availableVoices = window.speechSynthesis.getVoices();
