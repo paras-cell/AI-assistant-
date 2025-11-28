@@ -19,7 +19,7 @@ const HistoryPage = () => {
   const isCodeResponse = chat.response?.includes("def ") || chat.response?.includes(";") || chat.response?.includes("```");
 
   const formatTextResponse = (text) => {
-    const cleaned = text.replace(/\*\*/g, ""); // remove markdown bold
+    const cleaned = text.replace(/\*\*/g|| /\*/g|| /\-/g, ""); // remove markdown bold
     const points = cleaned.split(/(?<=[.?!])\s+/);
     return (
       <ul className="chat-response-list">
